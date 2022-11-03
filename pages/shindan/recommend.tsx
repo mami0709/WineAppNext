@@ -9,7 +9,7 @@ import React from 'react';
 import axios from "axios";
 
 
-const backendBaseUrl = "http://localhost:8080";
+const backendBaseUrl = "https://wine-app-express.herokuapp.com/";
 
 //ワインの品種等掲載
 const WineCard: React.FC<{
@@ -63,7 +63,7 @@ const Recommend: NextPage = () => {
 
   React.useEffect(() => {
     setLoading(true);
-    axios.get("http://localhost:8080/wines", {
+    axios.get("https://wine-app-express.herokuapp.com//wines", {
       // headers: {
       //   "Content-Type": "application/x-www-form-urlencoded",
       //   "Access-Control-Allow-Origin": "*",

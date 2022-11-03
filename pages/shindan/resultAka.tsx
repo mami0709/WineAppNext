@@ -14,7 +14,7 @@ import axios from "axios";
 export const ResultAka: NextPage = () => {
 	const totalPoint = useAppSelector(state => state.question.totalPoint);  //totalPointにquestion＋totalPointを代入
 	const rank = useAppSelector(state => state.question.rank);  //rankにquestion＋rankを代入
-  const backendBaseUrl = "http://localhost:8080";
+  const backendBaseUrl = "https://wine-app-express.herokuapp.com/";
 	const matches = useMediaQuery("(min-width:767px)"); //レスポンシブ設定を定義
 
 
@@ -23,7 +23,7 @@ export const ResultAka: NextPage = () => {
 
 	// バックエンドとの繋ぎ込み
 	React.useEffect(() => {
-    axios.get("http://localhost:8080/wines", {})
+    axios.get("https://wine-app-express.herokuapp.com/wines", {})
         .then((res) => {
           const { result, data } = res.data;
           if (result === "SUCCESS") {

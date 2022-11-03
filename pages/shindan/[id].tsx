@@ -11,7 +11,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 const WineDetail: NextPage = () => {
   const router = useRouter();
   const {id} = router.query;
-  const backendBaseUrl = "http://localhost:8080";
+  const backendBaseUrl = "https://wine-app-express.herokuapp.com/";
   //レスポンシブ設定を定義
   const matches = useMediaQuery("(min-width:767px)"); 
 
@@ -24,7 +24,7 @@ const WineDetail: NextPage = () => {
   React.useEffect(() => {
     if (id) {
       // setLoading(true);
-      axios.get(`http://localhost:8080/wine/${id}`)
+      axios.get(`https://wine-app-express.herokuapp.com/wine/${id}`)
           .then((res) => {
             const { result, data } = res.data;
             if (result === "SUCCESS") {

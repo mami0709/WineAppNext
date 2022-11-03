@@ -15,14 +15,14 @@ export const ResultAka: NextPage = () => {
 	const rank = useAppSelector(state => state.question.rank);  //rankにquestion＋rankを代入
 
 	const matches = useMediaQuery("(min-width:767px)"); //レスポンシブ設定を定義
-	const backendBaseUrl = "http://localhost:8080";
+	const backendBaseUrl = "https://wine-app-express.herokuapp.com/";
 
 	const [wineList, setWineList] = React.useState(null);
   const [loading ] = React.useState(false);
 
 	// export const test = wineList
 	React.useEffect(() => {
-    axios.get("http://localhost:8080/wines", {})
+    axios.get("https://wine-app-express.herokuapp.com/wines", {})
         .then((res) => {
           const { result, data } = res.data;
           if (result === "SUCCESS") {
