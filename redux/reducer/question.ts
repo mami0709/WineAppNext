@@ -39,7 +39,7 @@ export const questionSlice = createSlice({   //createSlice=変数、初期値や
 						: 3;
 	},
 
-	// sresetの処理を定義
+	// resetの処理を定義
     resetAnswers: (state) => {  //stateにinitialState(stateの初期値)を代入
 		return initialState;
 	},

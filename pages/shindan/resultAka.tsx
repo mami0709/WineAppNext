@@ -21,7 +21,7 @@ export const ResultAka: NextPage = () => {
 	const [wineList, setWineList] = React.useState(null);
   const [loading ] = React.useState(false);
 
-	// export const test = wineList
+	// バックエンドとの繋ぎ込み
 	React.useEffect(() => {
     axios.get("http://localhost:8080/wines", {})
         .then((res) => {
